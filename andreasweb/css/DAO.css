@@ -1,0 +1,100 @@
+
+/* Misc */
+body {
+	font-family: Sniglet;
+	background-image: url(../img/congruent_outline.png); 
+	background-repeat: repeat;
+}
+h1 {
+	font-family: Sniglet;
+	font-size: 250%;
+}
+
+h2 {
+	font-family: Sniglet;
+	font-size: 16pt;
+	
+}
+
+hr {
+ 	display: block;
+  	border: 0;
+  	width: 100%;
+  	color: #000;
+	background-color: #000; 
+	height: 2px;
+}
+
+.centerText {
+	text-align: center;
+}
+
+.textInput{
+	position: absolute;
+	left:110px;
+	width: 245px;
+}
+
+input[disabled] {
+   color: black;
+   font-weight: bolder;
+}
+
+/* Header stuff */
+
+#header {
+	display: block;
+	padding:10px;
+	height: 136px;
+	width: 600px;
+}
+
+#logo {
+	float: left;
+	margin-right: 20px;
+	background-image: url(../img/ethereum.png); 
+	background-repeat: no-repeat;
+	height: 67px;
+	width: 43px;
+}​
+
+
+
+/* The menu */
+#menu {  
+}
+
+#menu ul {
+    list-style:none;
+    padding-left:0;
+    margin-left: 0; 
+}
+#menu ul li {
+    display:inline; 
+    float:left;
+    margin-right: 20px;
+}
+
+#menu ul li a {
+	padding:5px; 
+	background: rgba(220,220,255); 
+	text-decoration: none; 
+	color: #402e16;
+}
+
+#menu ul li a:hover {
+	background-color:rgb(150,150,225,0.7) !important;
+	opacity: 0.7;
+}
+
+#menu ul li a.active { 
+	background: rgb(180,180,225,1.0);
+}
+
+#menu ul li a.adminLink {
+	color: #aa2222;
+}
+
+
+
+

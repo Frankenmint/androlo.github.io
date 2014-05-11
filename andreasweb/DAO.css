@@ -1,0 +1,270 @@
+
+/* Misc */
+body {
+	font-family: Sniglet;
+	background-image: url(./congruent_outline.png); 
+	background-repeat: repeat;
+}
+h1 {
+	font-family: Sniglet;
+	font-size: 250%;
+}
+
+h2 {
+	font-family: Sniglet;
+	font-size: 16pt;
+	
+}
+
+ hr {
+  	border: 0;
+  	width: 100%;
+  	color: #000;
+	background-color: #000; 
+	height: 2px;
+}
+
+.centerText {
+	text-align: center;
+}
+
+.textInput{
+	position: absolute;
+	left:110px;
+	width: 245px;
+}
+
+.textInputLevel {
+    position: absolute;
+    left: 110px;
+    width: 40px;
+}
+
+#logo {
+	float: left;
+	background-image: url(./ethereum.png); 
+	background-repeat: no-repeat;
+	height: 80px;
+	width: 80px;
+}​
+
+/* Divs */
+
+#header {
+	padding:10px;
+	height: 136px;
+}
+
+#containerEdit {
+	display: block;
+}
+
+#containerAdmin{
+    display: none;
+    height: 167px;
+	 padding:5px 10px;
+	 line-height: 150%;
+    border:2px solid;
+	 border-radius:5px;
+	 border-color: #402e16;
+}
+
+#containerConsensus{
+    display: none;
+    height: 160px;
+	 padding:5px 10px;
+	 line-height: 150%;
+    border:2px solid;
+	 border-radius:5px;
+	 border-color: #402e16;
+}
+
+#viewsection {
+	float: left;
+	height: 480px;
+	padding:5px 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	line-height: 150%;
+	border:2px solid;
+	border-radius:5px;
+	border-color: #402e16;
+}
+
+#tablesection {
+	float: left;
+	padding:5px 10px;
+	margin-top: 10px;
+	border:2px solid;
+	border-radius:5px;
+	border-color: #402e16;
+}
+
+/* The table */
+
+#datatable {
+	margin:0px;padding:0px;
+	width:100%;
+}
+
+#datatable table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+}
+
+#datatable a {
+    color: #00a;
+    text-decoration: none;
+}
+
+#datatable a:hover {
+    color: #22c;   
+    text-decoration: none;
+}
+
+/* The menu */
+#menu {  }
+
+#menu ul {
+    list-style:none;
+    padding-left:0;
+    margin-left: 0; 
+}
+#menu ul li {
+    display:inline; 
+    float:left;
+    margin-right: 20px;
+}
+
+#menu ul li a {
+padding:5px; 
+background: rgba(220,220,255); 
+text-decoration: none; color: #402e16;
+	text-shadow: #eee 0px 0px 2px; 
+}
+
+#menu ul li a:hover {
+	background-color:rgb(150,150,225,0.7) !important;
+	opacity: 0.7;
+}
+
+#menu ul li a.active { 
+background: rgb(180,180,225,1.0);
+}
+
+/* Edit buttons */
+#editMenu {
+}
+
+#editMenu ul { 
+    list-style:none;
+    padding-left: 0;
+    margin-left: 0;
+}
+#editMenu ul li { 
+    display:inline;
+    float:left;
+    margin-right: 10px;
+}
+
+/* background color set to RGBA, with opacity on 0.3 and also using text-shadow */
+#editMenu ul li a { 
+padding:5px; 
+background: rgba(220,220,255); 
+text-decoration: none; color: #402e16;
+	text-shadow: #eee 0px 0px 2px; 
+}
+	
+/* hover state shows a linear gradient and opacity it brought down to 0.9 and also shows a very slight grey gradient on top */
+#editMenu ul li a:hover 
+{
+	background-color:rgb(150,150,225,0.7) !important;
+	opacity: 0.7;
+}
+
+/* another RGBA background, now with an opacity of 0.8 */
+#editMenu ul li a.active { 
+background: rgb(180,180,225,1.0) !important; 
+}
+
+/* Table buttons */
+#tableMenu {
+}
+
+
+
+#tableMenu ul { 
+    list-style:none;
+    padding-left: 0;
+    margin-left: 0;
+    
+}
+#tableMenu ul li { 
+    display:inline;
+    float:left;
+}
+
+/* background color set to RGBA, with opacity on 0.3 and also using text-shadow */
+#tableMenu ul li a { 
+padding:5px; 
+text-decoration: none; color: #402e16;
+}
+	
+/* hover state shows a linear gradient and opacity it brought down to 0.9 and also shows a very slight grey gradient on top */
+#tableMenu ul li a:hover 
+{
+	background-color:rgb(150,150,225,0.7) !important;
+	opacity: 0.7;
+}
+
+/* another RGBA background, now with an opacity of 0.8 */
+#tableMenu ul li a.active { 
+background: rgb(180,180,225,1.0) !important; 
+}
+
+/* Admin buttons */
+#adminMenu {
+}
+
+
+
+#adminMenu ul { 
+    list-style:none;
+    padding-left: 0;
+    margin-left: 0;
+    
+}
+#adminMenu ul li { 
+    display:inline;
+    float:left;
+}
+
+/* background color set to RGBA, with opacity on 0.3 and also using text-shadow */
+#adminMenu ul li a { 
+padding:5px; 
+text-decoration: none; color: #402e16;
+}
+	
+/* hover state shows a linear gradient and opacity it brought down to 0.9 and also shows a very slight grey gradient on top */
+#adminMenu ul li a:hover 
+{
+	background-color:rgb(150,150,225,0.7) !important;
+	opacity: 0.7;
+}
+
+/* another RGBA background, now with an opacity of 0.8 */
+#adminMenu ul li a.active { 
+background: rgb(180,180,225,1.0) !important; 
+}
+
+#userLevelDiv{
+	display: inline;
+}
+
+#userLevelInputField{
+	width: 40px;
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Andy's DDAO</title>
+<meta name="generator" content="Bluefish 2.2.5" >
+<meta name="author" content="Androlo" >
+<meta name="date" content="2014-05-11T03:04:54+0200" >
+<meta name="copyright" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="expires" content="0">
+
+<link href='http://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet' type='text/css'>
+<link href="css/DAO.css" rel="stylesheet" type="text/css">
+<link href="css/Database.css" rel="stylesheet" type="text/css">
+<link href="css/Consensus.css" rel="stylesheet" type="text/css">
+<link href="css/About.css" rel="stylesheet" type="text/css">
+<link href="css/Admin.css" rel="stylesheet" type="text/css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="script/bigInteger.js"></script>
+<script src="script/script.js"></script>
+
+</head>
+<body>
+
+<div id="header">
+	<div id="logo"></div>
+	
+	<h1>Andy's DDAO</h1>
+	<div id="menu">
+		<ul>
+			<li><a href="javascript:void(0)" title="Data" onclick="switchPage(0)">Database</a></li>
+		</ul>
+		<ul id="consensusLink">
+			<li><a href="javascript:void(0)" title="Consensus" onclick="switchPage(1)">Consensus</a></li>
+		</ul>
+		<ul>
+			<li><a href="javascript:void(0)" title="About" onclick="switchPage(2)">About</a></li>
+		</ul>
+		<ul id="adminLinks">
+			<li><a id="adminLinkL" class="adminLink" href="javascript:void(0)" title="Admin" onclick="switchPage(3)">Control Panel</a></li>
+		</ul>
+		
+		<ul>
+	</div>
+	<br><hr style="color:black" />
+</div>
+
+<div>
+	<div id="containerDatabase">
+		<div id="viewsection">
+			<h2 class="centerText">Document</h2>
+			Uploader: <input type="text" class="textInput" name="uploader" id="uploaderInputField" ><br>
+			Submitted: <input type="text" class="textInput" name="uploader" id="submittedInputField" ><br>
+			Modified: <input type="text" class="textInput" name="filetype" id="modifiedInputField" ><br>
+			Title: <input type="text" class="textInput" name="title" id="titleInputField" ><br>
+			Contents:<br>
+			<textarea name="description" id="descriptionTextArea" rows="11" cols="40"></textarea>
+			<hr>
+			<div id="editMenu">
+				<ul id="createDocumentButton">
+					<li><a href="javascript:void(0)" title="Create" onclick="createDocument()">Create</a></li>
+				</ul>
+				<ul id="updateDocumentButton">
+					<li><a href="javascript:void(0)" title="Update" onclick="updateDocument()">Update</a></li>
+				</ul>
+				<ul id="deleteDocumentButton">
+					<li><a href="javascript:void(0)" title="Delete" onclick="deleteDocument()">Delete</a></li>
+				</ul>
+				<ul id="clearDocumentFieldsButton">
+					<li><a href="javascript:void(0)" title="Clear"  onclick="clearDocument()">Clear</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="tablesection">
+			<div id="tableMenu">
+				<ul>
+					<li><a href="javascript:void(0)" title="Generate" class="active" onclick="generateTable()">List Documents</a></li>
+				</ul>
+			</div>
+			<br>
+			<hr>
+			<div id="datatable" ></div>
+			
+		</div>	
+	</div>
+	
+	<div id="containerConsensus">
+		<div id="contractViewSection">
+			<h2 class="centerText">Poll data</h2>
+			Regname: <input type="text" class="textInput" name="regname" id="contractRegname" disabled><br>
+			Address: <input type="text" class="textInput" name="address" id="contractAddress" disabled><br>
+			Uploader: <input type="text" class="textInput" name="creator" id="contractCreator" disabled><br>
+			Author: <input type="text" class="textInput" name="author" id="contractAuthor" disabled><br>
+			Date: <input type="text" class="textInput" name="date" id="contractDate" disabled><br>
+			Version: <input type="text" class="textInput" name="version" id="contractVersion" disabled><br>
+			Name: <input type="text" class="textInput" name="name" id="contractName" disabled><br>
+			Description:<br>
+			<textarea name="description" id="contractDescriptionTextArea" rows="10" cols="40" disabled></textarea>
+			<hr>
+			<div id="pollViewMenu">
+				<ul>
+					<li><a href="javascript:void(0)" title="VoteYes" class="active" onclick="vote(2)">Accept</a></li>
+				</ul>
+				<ul>
+					<li><a href="javascript:void(0)" title="VoteNo" class="active" onclick="vote(1)">Reject</a></li>
+				</ul>
+			</div>
+			
+		</div>
+		<div id="pollTableSection">
+			<div id="pollTableMenu">
+				<ul>
+					<li><a href="javascript:void(0)" title="Generate" class="active" onclick="generatePollTable()">List Active Polls</a></li>
+				</ul>
+			</div>
+			<br>
+			<hr>
+			<div id="pollTable" ></div>
+		</div>
+	</div>
+	
+	<div id="containerAbout">
+		<div id="aboutText">
+			<p class="aboutTextHeader">Andy's DDAO</p>
+			<br>
+			<p class="aboutTextBread">
+			This is a DDAO (Democratic Decentralized Autonomous Organization). It allows you to  
+			create a decentralized, democratically run organization. A DAO uses 
+			peer-to-peer communication for information sharing. The management and   
+			processing of information is handled by the Ethereum client. The Ethereum client makes 
+			sure that everyone's local data is synchronized with everyone elses. It
+			also makes sure that all changes to the data (or the DAO itself) are done in accordance 
+			with the	agreed-upon rules. 
+			</p>
+			<p class="aboutTextBread">
+			General DAO's can have many different rules. They do not even have to be democratically 
+			run. Rules are updated and kept current by the same mechanisms that processes the 
+			other information.
+			</p>
+			<p class="aboutTextBread">
+			Andy's DDAO is based on Dennis McKinnons DOUG contract system.
+			</p>
+			
+		</div>
+	</div>
+
+	<div id="containerAdmin">
+		<div id="adminEditSection">
+			<h2 class="centerText">Admin tools</h2>
+			Nickname: <input type="text" name="userNickname" id="userNicknameInputField" maxlength="20" disabled='disabled'><br>
+			Address: <input type="text" name="userAddress" id="userAddressInputField" ><br>
+			User: <input type="radio" name="userRadio" id="userRadio" checked>
+			Admin: <input type="radio" name="userRadio" id="adminRadio">
+			<hr>
+			<div id="adminMenu">
+				<ul id="adminButtons">
+					<li><a href="javascript:void(0)" title="RemoveUser" class="active" onclick="removeUser()">Remove User</a></li>
+					<li><a href="javascript:void(0)" title="PromoteUser" class="active" onclick="promoteUser()">Promote User</a></li>
+				</ul>
+				<ul id="deleteMeButton">
+					<li><a href="javascript:void(0)" title="DeleteMe" class="deleteMeLink" onclick="deleteMe()">Delete Me</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="registerSection">
+		<p>You are currently not registered with this DAO. If you want to register, choose a nickname below (max 20 characters).</p>
+		<hr>
+		Nickname: <input type="text" name="registerNickname" id="registerNicknameInputField" maxlength="20"><br>
+		<hr>
+		<div id="registerMenu">
+				<ul>
+					<li><a href="javascript:void(0)" title="RegisterNick" class="active" onclick="registerNickname()">Register</a></li>
+				</ul>
+		</div>
+		</div>
+		<div id="userTableSection">
+			<div id="adminMenu">
+				<ul>
+					<li><a href="javascript:void(0)" title="Generate" class="active" onclick="generateUserTable()">List Users</a></li>
+				</ul>
+			</div>
+			<br>
+			<hr>
+			<div id="userTable" ></div>
+			
+		</div>	
+	</div>
+	
+	
+</div>
+	
+</body>
+</html>

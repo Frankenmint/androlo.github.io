@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AndysDDOUGinfo</title>
+<meta name="generator" content="Bluefish 2.2.5" >
+<meta name="author" content="Androlo" >
+<meta name="date" content="2014-05-10T23:14:10+0200" >
+<meta name="copyright" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="expires" content="0">
+</head>
+<body>
+<h1>Andys DDOUG info</h1>
+<div>
+	<p>
+	This site is built on the DDOUG contract system, which is itself based on DOUG (v3), 
+	pioneered by <a href="https://github.com/dennismckinnon">DennisMcKinnon</a>. It is 
+	essentially a system for having contracts call other contracts through a name registry.
+	There are also voting features built in, both in DOUG (v3, but simply DOUG from now on),
+	and DDOUG.
+	
+	This site and system is less general then DOUG, and focuses mainly on democratic
+	rule systems. It is aimed more towards communities and organizations rather then
+	business.
+	</p>
+	
+	<h2>Contracts</h2>
+	
+	<p>
+		These are the four basic contracts:
+	</p>
+	
+	<ul>
+		<li>DDOUG-v1.lsp (Based on <a href="https://github.com/dennismckinnon/Ethereum-Contracts/blob/master/DOUG/Doug-v3.lsp">Doug-v3.lsp/a></li>
+		<li>UserManager-v1.lsp</li>
+		<li>UserManager-v1.lsp</li>
+		<li>Voting-v1.lsp (Based on <a href="https://github.com/dennismckinnon/Ethereum-Contracts/blob/master/DOUG/pollcodes.lsp">pollcodes.lsp</a></li>
+	</ul>
+	
+	<p>
+		These four contracts all implement linked lists. In object-oriented terms, they would 
+		be subclasses of a bare-bones linked list class. All but the database are structured
+		pretty much the same way.
+		
+		The basic linked list is simple. It starts out non-empty. A dummy element is added as
+		head and tail upon creation. It ensures we never have to do costly null-checks when
+		operating on the list, but is not necessary for it to work. It works just like a
+		normal linked list, and is well documented.
+		
+		The database is a linked list being fed addresses from a self-expanding pool, implemented 
+		as a stack. Whenever an entry is removed, its address is put in the pool. When a new element
+		is added, it checks the pool for addresses. If the pool is empty, it will increase its size
+		by 1, and put the new element in the newly freed slot. This list does not have a "dummy"
+		tail.
+	</p>
+	
+	<h2>Voting</h2>
+	
+	<p>
+		At this time, votes are issues whenever someone tries to add a new contract to the DDOUG,
+		replace an existing contract, or delete one (including DDOUG itself). The way it happens
+		is pretty much in accordance with Dennis' voting system, and it's this:
+		
+		- A contract makes a request to the DDOUG to join the cluster.
+	
+		- If no voting contract has been added, contracts are always accepted.
+				
+		- If a voting contract has been added, DDOUG responds by passing the contract name and
+		address to the voting contract.
+		
+		- The voting contract creates a new	contract, which is the target for polls. The poll contract
+		is stored in the voting contracts built in list of active polls, under the name it is
+		requesting.
+		
+		- The poll becomes visible in the consensus part of the page. Admins can choose to accept
+		or reject the vote. Currently, one vote is enough, but more about voting and different
+		types of polls later.
+		
+		- If the vote succeeds, the contract will be added to DDOUG, or its address will
+		replace the current addres, if there is already a contract with the requested name.
+		
+		- If the vote fails, the contract is not added to DDOUG.
+		
+		- Regardless of whether it succeeds or not, the poll contract will be removed, and the poll
+		removed from the voting list.
+	</p>
+	
+<h2>Polls</h2>
+	
+	<p>
+		There are many different ways to vote. It could be a member consensus vote, an admin
+		consensus vote, a single rejection is enough (veto rights), etc. All of these poll types
+		will be possible later.
+	</p>
+	
+</div>
+</body>
+</html>
